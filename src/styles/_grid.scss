@@ -1,0 +1,51 @@
+[data-row] {
+  display: flex;
+
+  &, * { box-sizing: border-box; }
+  
+  [data-col] { flex: 0 0 auto; }
+  [data-col~="left"]   { align-self: flex-start; }
+  [data-col~="middle"] { align-self: center; }
+  [data-col~="right"]  { align-self: flex-end; }
+  [data-col~="auto"]   { flex: 1 0 auto; }
+  
+  @each $break, $map in $breakpoints {
+    @for $i from 1 through $column-count {
+      [data-col~="#{$i}"] {
+        flex: 0 0 (100%/$column-count)*$i;
+      }
+      [data-col~="#{$break}-#{$i}"] {
+        @include respond-to($break) {
+          flex: 0 0 (100%/$column-count)*$i;
+        }
+      }
+    }
+  }
+  
+}
+
+[data-row~="right"]    { justify-content: flex-end; }
+[data-row~="left"]     { justify-content: flex-start; }
+[data-row~="center"]   { justify-content: center; }
+[data-row~="top"]      { align-items: flex-start; }
+[data-row~="middle"]   { align-items: center; }
+[data-row~="baseline"] { align-items: baseline; }
+[data-row~="stretch"]  { align-items: stretch; }
+[data-row~="bottom"]   { align-items: flex-end; }
+[data-row~="reverse"]  { flex-direction: row-reverse; }
+[data-row~="vertical"] { flex-direction: column; }
+[data-row~="wrap"]     { flex-wrap: wrap; }
+
+@each $break, $map in $breakpoints {
+  [data-row~="#{$break}-right"]    { @include respond-to($break) { justify-content: flex-end; } }
+  [data-row~="#{$break}-left"]     { @include respond-to($break) { justify-content: flex-start; } }
+  [data-row~="#{$break}-center"]   { @include respond-to($break) { justify-content: center; } }
+  [data-row~="#{$break}-top"]      { @include respond-to($break) { align-items: flex-start; } }
+  [data-row~="#{$break}-middle"]   { @include respond-to($break) { align-items: center; } }
+  [data-row~="#{$break}-baseline"] { @include respond-to($break) { align-items: baseline; } }
+  [data-row~="#{$break}-stretch"]  { @include respond-to($break) { align-items: stretch; } }
+  [data-row~="#{$break}-bottom"]   { @include respond-to($break) { align-items: flex-end; } }
+  [data-row~="#{$break}-reverse"]  { @include respond-to($break) { flex-direction: row-reverse; } }
+  [data-row~="#{$break}-vertical"] { @include respond-to($break) { flex-direction: column; } }
+  [data-row~="#{$break}-wrap"]     { @include respond-to($break) { flex-wrap: wrap; } }
+}

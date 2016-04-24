@@ -1,0 +1,4 @@
+@function map-length($map) {
+  $count: 0; @each $i in $map { $count: $count+1; }
+  @return $count;
+}

@@ -1,0 +1,21 @@
+default:
+  watchpaths:
+    styles:
+      - ./src/styles/**/*.scss
+    reload:
+      - ./**/*.html
+  
+  styles:
+    sources:
+      - ./src/styles/manifest.scss
+    concat: flexboxgrid.min.css
+    dest: ./dest/
+    options:
+      sourcemap: false
+      style: compressed
+    
+  browsersync:
+    open: false
+    server:
+      baseDir: './'
+  

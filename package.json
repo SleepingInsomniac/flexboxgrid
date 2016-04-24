@@ -1,0 +1,34 @@
+{
+  "name": "flexgrid",
+  "version": "1.0.0",
+  "description": "Flex box grid system",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grid",
+    "flexbox",
+    "flex",
+    "sass",
+    "scss"
+  ],
+  "author": "Alex Clink",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.0",
+    "gulp-rm": "^1.0.0",
+    "gulp-ruby-sass": "^2.0.5",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-comments": "^1.0.1",
+    "require-dir": "^0.3.0",
+    "yaml-config": "^0.3.0",
+    "yargs": "^3.30.0"
+  }
+}
