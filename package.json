@@ -1,5 +1,5 @@
 {
-  "name": "flexbox-grid",
+  "name": "flex-blocks",
   "version": "1.0.0",
   "description": "Flex box grid system",
   "main": "gulpfile.js",
