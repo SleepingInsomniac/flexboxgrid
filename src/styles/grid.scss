@@ -1,3 +1,7 @@
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+
 [data-row] {
   display: flex;
 
@@ -7,26 +11,27 @@
   [data-col~="left"]   { align-self: flex-start; }
   [data-col~="middle"] { align-self: center; }
   [data-col~="right"]  { align-self: flex-end; }
-  [data-col~="auto"]   { flex: 1 0 auto; }
+  [data-col~="auto"]   { flex: auto; }
   
   @each $break, $map in $breakpoints {
     @for $i from 1 through $column-count {
       [data-col~="#{$i}"] {
-        flex: 0 0 (100%/$column-count)*$i;
+        flex: 0 0 (100% / $column-count) * $i;
       }
       [data-col~="#{$break}-#{$i}"] {
         @include respond-to($break) {
-          flex: 0 0 (100%/$column-count)*$i;
+          flex: 0 0 (100% / $column-count) * $i;
         }
       }
     }
   }
-  
 }
 
 [data-row~="right"]    { justify-content: flex-end; }
 [data-row~="left"]     { justify-content: flex-start; }
 [data-row~="center"]   { justify-content: center; }
+[data-row~='between']  { justify-content: space-between; }
+[data-row~='around']   { justify-content: space-around; }
 [data-row~="top"]      { align-items: flex-start; }
 [data-row~="middle"]   { align-items: center; }
 [data-row~="baseline"] { align-items: baseline; }
@@ -40,6 +45,8 @@
   [data-row~="#{$break}-right"]    { @include respond-to($break) { justify-content: flex-end; } }
   [data-row~="#{$break}-left"]     { @include respond-to($break) { justify-content: flex-start; } }
   [data-row~="#{$break}-center"]   { @include respond-to($break) { justify-content: center; } }
+  [data-row~="#{$break}-between"]  { @include respond-to($break) { justify-content: space-between; } }
+  [data-row~="#{$break}-around"]   { @include respond-to($break) { justify-content: space-around; } }
   [data-row~="#{$break}-top"]      { @include respond-to($break) { align-items: flex-start; } }
   [data-row~="#{$break}-middle"]   { @include respond-to($break) { align-items: center; } }
   [data-row~="#{$break}-baseline"] { @include respond-to($break) { align-items: baseline; } }

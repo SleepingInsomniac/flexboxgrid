@@ -1,0 +1,39 @@
+@import 'styles/functions';
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$break-colors: (
+  xs: #FB2B07,
+  sm: #A3FF08,
+  md: #22FF58,
+  lg: #15ABFE
+);
+
+body {
+  font-family: helvetica, sans-serif;
+}
+  
+[data-col] {
+  min-height: 40px;
+  border: 1px solid #CCC;
+  background-color: #EFEFEF;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+@each $break, $map in $breakpoints {
+  [data-row~="#{$break}"] [data-col] {
+    @include respond-to($break) {
+      background-color: map-get($break-colors, $break);
+    }
+  }
+}
+
+@each $break, $color in $break-colors {
+  .br-#{$break} {
+    @include respond-to($break) {
+      background-color: $color;
+    }
+  }
+}

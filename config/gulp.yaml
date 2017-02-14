@@ -1,21 +1,30 @@
 default:
   watchpaths:
     styles:
-      - ./src/styles/**/*.scss
+      - ./src/**/*.scss
     reload:
       - ./**/*.html
-  
+
   styles:
     sources:
-      - ./src/styles/manifest.scss
+      - ./src/styles/**/*.scss
     concat: flexboxgrid.min.css
     dest: ./dest/
     options:
+      sourcemap: true
+      style: compressed
+
+  example:
+    sources:
+      - ./src/example.scss
+    concat: example.min.css
+    dest: ./
+    options:
       sourcemap: false
       style: compressed
-    
+
   browsersync:
     open: false
+    port: 3000
     server:
       baseDir: './'
-  

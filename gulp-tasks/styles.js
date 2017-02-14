@@ -9,7 +9,8 @@ module.exports = function(config) {
         // sass          = require('gulp-ruby-sass'),
         autoprefixer  = require('gulp-autoprefixer'),
         concat        = require('gulp-concat'),
-        sourcemaps    = require('gulp-sourcemaps');
+        sourcemaps    = require('gulp-sourcemaps'),
+        cleancss      = require('gulp-clean-css');
 
         config = config.styles;
 
@@ -22,13 +23,14 @@ module.exports = function(config) {
   
   gulp.task('styles', () => {
     return gulp.src(config.sources)
-      .pipe(gulpif(!!config.options.sourcemap, sourcemaps.init()))
+      .pipe(sourcemaps.init())
         .pipe(sass(config.options))
           .on('error', handleError)
         .pipe(autoprefixer())
           .on('error', handleError)
-        .pipe(gulpif(!!config.concat, concat(config.concat)))
-      .pipe(gulpif(!!config.options.sourcemap, sourcemaps.write()))
+        .pipe(concat(config.concat))
+        .pipe(cleancss())
+      .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(config.dest))
       .pipe(browserSync.stream());
   });

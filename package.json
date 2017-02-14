@@ -1,11 +1,14 @@
 {
-  "name": "flexgrid",
+  "name": "flexbox-grid",
   "version": "1.0.0",
   "description": "Flex box grid system",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserDependencies": [
+    "node"
+  ],
   "keywords": [
     "grid",
     "flexbox",
@@ -24,11 +27,14 @@
     "gulp-if": "^2.0.0",
     "gulp-rm": "^1.0.0",
     "gulp-ruby-sass": "^2.0.5",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-strip-comments": "^1.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-strip-comments": "^2.4.4",
     "require-dir": "^0.3.0",
     "yaml-config": "^0.3.0",
-    "yargs": "^3.30.0"
+    "yargs": "^6.6.0"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^3.0.2"
   }
 }
