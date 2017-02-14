@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    
+    <title>Grid</title>
+    <link rel="stylesheet" href="/example.min.css" type="text/css">
+  </head>
+  <body>
+    
+    <h1>Flex-blocks</h1>
+    <p>A Flexbox based grid</p>
+    
+    <hr>
+    
+    <div data-row>
+      <div class="br-xs" data-col="auto"><div>xs</div></div>
+      <div class="br-sm" data-col="auto"><div>sm</div></div>
+      <div class="br-md" data-col="auto"><div>md</div></div>
+      <div class="br-lg" data-col="auto"><div>lg</div></div>
+    </div>
+      
+    <h3>Responsive</h3>
+    <div data-row="lg-center wrap">
+      <div data-col="lg-3 md-4 sm-6 xs-12"><div></div></div>
+      <div data-col="lg-3 md-4 sm-6 xs-12"><div></div></div>
+      <div data-col="lg-3 md-4 sm-auto xs-12"><div></div></div>
+    </div>
+    <pre class="code">&lt;div data-row=&quot;lg-center wrap&quot;&gt;
+  &lt;div data-col=&quot;lg-3 md-4 sm-6 xs-12&quot;&gt;&lt;/div&gt;
+  &lt;div data-col=&quot;lg-3 md-4 sm-6 xs-12&quot;&gt;&lt;/div&gt;
+  &lt;div data-col=&quot;lg-3 md-4 sm-auto xs-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+    
+    <h3>Auto-sizing</h3>
+    <div data-row>
+      <div data-col="3"><div></div></div>
+      <div data-col="auto"><div></div></div>
+    </div>
+    <div data-row>
+      <div data-col="auto"><div></div></div>
+      <div data-col="3"><div></div></div>
+    </div>
+    
+    <h3>Right aligned</h3>
+    <div data-row="right">
+      <div data-col="4"><div></div></div>
+    </div>
+    <div data-row="right">
+      <div data-col="8"><div></div></div>
+    </div>
+    <div data-row="right">
+      <div data-col="12"><div></div></div>
+    </div>
+    
+    <h3>Grid-ception</h3>
+    <div data-row>
+      <div data-col="8" data-row>
+        <div data-col="3"><div></div></div>
+        <div data-col="6"><div></div></div>
+        <div data-col="3"><div></div></div>
+      </div>
+      <div data-col="4" data-row>
+        <div data-col="6"><div></div></div>
+        <div data-col="6"><div></div></div>
+      </div>
+    </div>
+    
+    <h3>Grid example</h3>
+    <div data-row>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+      <div data-col="1"><div></div></div>
+    </div>
+    
+    <div data-row>
+      <div data-col="2"><div></div></div>
+      <div data-col="2"><div></div></div>
+      <div data-col="2"><div></div></div>
+      <div data-col="2"><div></div></div>
+      <div data-col="2"><div></div></div>
+      <div data-col="2"><div></div></div>
+    </div>
+    
+    <div data-row>
+      <div data-col="3"><div></div></div>
+      <div data-col="3"><div></div></div>
+      <div data-col="3"><div></div></div>
+      <div data-col="3"><div></div></div>
+    </div>
+    
+    <div data-row>
+      <div data-col="4"><div></div></div>
+      <div data-col="4"><div></div></div>
+      <div data-col="4"><div></div></div>
+    </div>
+    
+    <div data-row>
+      <div data-col="6"><div></div></div>
+      <div data-col="6"><div></div></div>
+    </div>
+    
+    <div data-row>
+      <div data-col="12"><div></div></div>
+    </div>
+    
+  </body>
+</html>

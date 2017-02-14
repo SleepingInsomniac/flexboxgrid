@@ -2,23 +2,24 @@ default:
   watchpaths:
     styles:
       - ./src/**/*.scss
+      - ./example/**/*.scss
     reload:
       - ./**/*.html
 
   styles:
     sources:
       - ./src/styles/**/*.scss
-    concat: flexboxgrid.min.css
-    dest: ./dest/
+    concat: flex-blocks.min.css
+    dest: ./dist/
     options:
       sourcemap: true
       style: compressed
 
   example:
     sources:
-      - ./src/example.scss
+      - ./example/**/*.scss
     concat: example.min.css
-    dest: ./
+    dest: ./example
     options:
       sourcemap: false
       style: compressed
@@ -27,4 +28,4 @@ default:
     open: false
     port: 3000
     server:
-      baseDir: './'
+      baseDir: './example'
